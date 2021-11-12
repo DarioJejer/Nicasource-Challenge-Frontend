@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { MovieReview } from './MovieReview';
+import { MovieReviewsCarousel } from './MovieReviewsCarousel';
 
 const style = {
   position: 'absolute',
@@ -40,7 +40,9 @@ export const MovieModal = ({open, handleClose}) => {
             Massa tempor nec feugiat nisl pretium fusce id. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. 
             Praesent tristique magna sit amet purus gravida quis blandit turpis. Morbi quis commodo odio aenean sed adipiscing diam donec.
           </Typography>
-          <MovieReview/>
+          <Box m={5}>
+            <MovieReviewsCarousel/>
+          </Box>
         </Box>
       </Modal>
     </div>
