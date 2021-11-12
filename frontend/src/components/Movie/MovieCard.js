@@ -1,11 +1,18 @@
+import * as React from 'react';
 import "./MovieCard.css";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import { DetailsModal } from "./DetailsModal";
 
 export const MovieCard = () => {
+  
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Card sx={{ maxWidth: 300, margin: 2}}>
       <CardActionArea>
@@ -15,7 +22,7 @@ export const MovieCard = () => {
           image="./Joker-Poster.jpg"
           alt="Movie Poster"
         />
-        <CardContent>
+        <CardContent onClick={handleOpen}>
           <Typography gutterBottom variant="h5" component="div">
             Title
           </Typography>
@@ -30,6 +37,7 @@ export const MovieCard = () => {
           Share
         </Button>
       </CardActions>
+      <DetailsModal open={open} handleClose={handleClose}/>
     </Card>
     // <div class="movie-card">
     //   <div>Title</div>
