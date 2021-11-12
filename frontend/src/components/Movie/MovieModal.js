@@ -3,32 +3,26 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { MovieReviewsCarousel } from './MovieReviewsCarousel';
-
-const style = {
-  position: 'absolute',
-  top: '100px',
-  left: '50%',
-  transform: 'translate(-50%, 0 )',
-  width: '80%',
-  bgcolor: 'background.paper',
-  boxShadow: 24,
-  p: 4,
-};
+import { CardMedia, Dialog, DialogContent, Grid } from '@mui/material';
+import { maxWidth } from '@mui/system';
 
 export const MovieModal = ({open, handleClose}) => {
   return (
-    <div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="movie-title"
-        aria-describedby="movie-plot"
-      >
-        <Box sx={style}>
-          <Typography id="movie-title" variant="h6" component="h2">
-            Title of the movie
-          </Typography>
-          <Typography id="movie-plot" sx={{ mt: 2 }}>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="movie-title"
+      aria-describedby="movie-plot"
+      scroll="body"
+      fullWidth= "true"
+      maxWidth= "80%"
+    >
+      <DialogContent>
+        <Typography id="movie-title" variant="h6" component="h2">
+          Title of the movie
+        </Typography>
+        <Box sx={{ display: 'grid', gridTemplateColumns: '2fr 1fr', columnGap: 5 }}>
+          <Typography id="movie-plot" sx={{ mt: 2}}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
             
             Tristique et egestas quis ipsum. Ut aliquam purus sit amet luctus. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. 
@@ -40,11 +34,19 @@ export const MovieModal = ({open, handleClose}) => {
             Massa tempor nec feugiat nisl pretium fusce id. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. 
             Praesent tristique magna sit amet purus gravida quis blandit turpis. Morbi quis commodo odio aenean sed adipiscing diam donec.
           </Typography>
-          <Box m={5}>
-            <MovieReviewsCarousel/>
+          <Box sx={{ alignItems: 'center' }}>
+            <CardMedia
+              component="img"
+              height="300"
+              image="./Joker-Poster.jpg"
+              alt="Movie Poster"
+            />
           </Box>
         </Box>
-      </Modal>
-    </div>
+        <Box m={5}>
+          <MovieReviewsCarousel/>
+        </Box>
+      </DialogContent>
+    </Dialog>
   );
 }
