@@ -3,7 +3,7 @@ import "./Home.css";
 
 export const Home = () => {
   return (
-    <div class="movies-grid">
+    <div className="movies-grid">
       <MovieCard/>
       <MovieCard/>
       <MovieCard/>
