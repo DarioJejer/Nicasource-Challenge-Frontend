@@ -1,0 +1,8 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    /* grid-auto-rows: 100px; */
+    justify-items: center;
+    align-items: center;
+  }
