@@ -1,17 +1,17 @@
-import { Movie } from "../Movie/Movie";
+import { MovieCard } from "../Movie/MovieCard";
 import "./Home.css";
 
 export const Home = () => {
   return (
     <div class="movies-grid">
-      <Movie/>
-      <Movie/>
-      <Movie/>
-      <Movie/>
-      <Movie/>
-      <Movie/>
-      <Movie/>
-      <Movie/>
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
+      <MovieCard/>
     </div>
   );
 };
