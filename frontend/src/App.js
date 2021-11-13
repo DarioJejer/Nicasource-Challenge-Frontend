@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { AdminPanel } from './components/AdminPanel/AdminPanel';
 import { Home } from './components/Home/Home';
 import { Landing } from './components/Landing/Landing';
 
@@ -15,7 +16,11 @@ function App() {
     // </Router>
     <>
       {user ? ( 
-        <Home/>
+        user.IsAdmin ? (
+          <AdminPanel/>
+          ) : (
+          <Home/>          
+        )
       ) : (
         <Landing/>
       )}
