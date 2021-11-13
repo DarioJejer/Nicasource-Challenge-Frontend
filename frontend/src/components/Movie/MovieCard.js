@@ -15,14 +15,14 @@ export const MovieCard = () => {
 
   return (
     <Card sx={{ maxWidth: 300, margin: 2}}>
-      <CardActionArea>
+      <CardActionArea onClick={handleOpen}>
         <CardMedia
           component="img"
           height="300"
-          image="./Joker-Poster.jpg"
+          image="https://www.gamespot.com/a/uploads/original/1562/15626911/3776884-image%285%29.png"
           alt="Movie Poster"
         />
-        <CardContent onClick={handleOpen}>
+        <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Title
           </Typography>
@@ -32,11 +32,6 @@ export const MovieCard = () => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions>
       <MovieModal open={open} handleClose={handleClose}/>
     </Card>
   );

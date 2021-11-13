@@ -3,10 +3,10 @@ import Carousel from 'react-material-ui-carousel'
 import { Grid } from '@mui/material'
 import { MovieReview } from './MovieReview';
 
-export const MovieReviewsCarousel = () => 
-{     
+export const MovieReviewsCarousel = () => {     
+    
     const groupReviews = (reviews) => {
-        const groupZise = Math.ceil(window.innerWidth * 0.8 / 450);
+        const groupZise = Math.ceil(window.innerWidth * 0.6 / 450);
         const groupedReviews = [];
         reviews.forEach((review, i) => {
             if(i%groupZise === 0){
@@ -20,11 +20,11 @@ export const MovieReviewsCarousel = () =>
         return (
             <React.Fragment key={i}>
                 <Grid
-                gap= "40px"
                 container
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
+                gap= "40px"
                 >
                     {reviews.map(review => <MovieReview key={review.toString()}/>)}
                 </Grid>
