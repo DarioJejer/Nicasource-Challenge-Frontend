@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { MovieReviewsCarousel } from '../MovieReview/MovieReviewsCarousel';
 import { MovieReviewForm } from '../MovieReview/MovieReviewForm';
-import { CardMedia, Dialog, DialogContent, Grid } from '@mui/material';
+import { CardMedia, Dialog, DialogContent } from '@mui/material';
 
 export const MovieModal = ({open, handleClose}) => {
   return (

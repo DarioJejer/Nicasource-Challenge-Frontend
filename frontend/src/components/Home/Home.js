@@ -1,3 +1,5 @@
+import { Landing } from "../Landing/Landing";
+import { Login } from "../Landing/Login";
 import { MovieCard } from "../Movie/MovieCard";
 import "./Home.css";
 import { NavBar } from "./NavBar";

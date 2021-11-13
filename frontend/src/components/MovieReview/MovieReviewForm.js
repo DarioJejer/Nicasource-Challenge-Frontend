@@ -1,10 +1,7 @@
 import * as React from 'react';
 import "./MovieReviewForm.css"
 import TextField from '@mui/material/TextField';
-import { Card, CardActions, CardContent, CardHeader, FormControl, FormHelperText, Rating } from '@mui/material';
-
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
+import { Card, CardActions, CardHeader, Rating } from '@mui/material';
 
 export const MovieReviewForm = () => {
 
