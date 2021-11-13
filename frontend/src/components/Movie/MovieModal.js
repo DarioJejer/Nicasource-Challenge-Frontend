@@ -13,13 +13,12 @@ export const MovieModal = ({open, handleClose, movie}) => {
     try {        
         axios.get("http://localhost:8000/rating/").then(res => res.data)
           .then(reviews => {
-            reviews = reviews.filter(r => r.Movie == movie.Id)
-            setReviews(reviews);
+            setReviews(reviews.filter(r => r.Movie === movie.Id));
           })      
     } catch (error) {
         console.log(error);
     }
-  }, [])
+  }, [movie.Id])
 
 
   return (
