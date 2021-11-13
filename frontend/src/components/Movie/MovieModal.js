@@ -52,7 +52,7 @@ export const MovieModal = ({open, handleClose, movie}) => {
         <Box m={5}>
           <MovieReviewsCarousel reviews={reviews}/>
         </Box>
-        <MovieReviewForm/>
+        <MovieReviewForm movie={movie}/>
       </DialogContent>
     </Dialog>
   );

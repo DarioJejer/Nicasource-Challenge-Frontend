@@ -1,9 +1,12 @@
-import * as React from 'react';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./MovieReviewForm.css"
 import TextField from '@mui/material/TextField';
 import { Card, CardActions, CardHeader, Rating } from '@mui/material';
 
-export const MovieReviewForm = () => {
+export const MovieReviewForm = ({movie}) => {
+
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const [commentValue, setCommentValue] = React.useState('');
   const [ratingValue, setRatingValue] = React.useState(0);
@@ -11,8 +14,17 @@ export const MovieReviewForm = () => {
     setCommentValue(event.target.value);
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submit!");
+    try {
+      axios.post("http://localhost:8000/rating/", {
+          Comment: commentValue, 
+          Rating: ratingValue, 
+          Movie: movie.Id,
+          User: 1
+          // User: user.Id
+        })          
+    } catch (error) {
+        alert("There was a problem, try again in a moment")               
+    }
   }
 
   return (
