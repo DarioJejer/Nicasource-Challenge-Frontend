@@ -1,10 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import { MovieReviewsCarousel } from './MovieReviewsCarousel';
+import { MovieReviewsCarousel } from '../MovieReview/MovieReviewsCarousel';
+import { MovieReviewForm } from '../MovieReview/MovieReviewForm';
 import { CardMedia, Dialog, DialogContent, Grid } from '@mui/material';
-import { maxWidth } from '@mui/system';
 
 export const MovieModal = ({open, handleClose}) => {
   return (
@@ -15,7 +14,7 @@ export const MovieModal = ({open, handleClose}) => {
       aria-describedby="movie-plot"
       scroll="body"
       fullWidth= "true"
-      maxWidth= "80%"
+      maxWidth= "lg"
     >
       <DialogContent>
         <Typography id="movie-title" variant="h6" component="h2">
@@ -34,18 +33,20 @@ export const MovieModal = ({open, handleClose}) => {
             Massa tempor nec feugiat nisl pretium fusce id. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. 
             Praesent tristique magna sit amet purus gravida quis blandit turpis. Morbi quis commodo odio aenean sed adipiscing diam donec.
           </Typography>
-          <Box sx={{ alignItems: 'center' }}>
+          <Box sx={{ justifyItems: 'center' }}>
             <CardMedia
               component="img"
               height="300"
-              image="./Joker-Poster.jpg"
+              image="https://www.gamespot.com/a/uploads/original/1562/15626911/3776884-image%285%29.png"
               alt="Movie Poster"
+              sx={{objectFit: "contain"}}
             />
           </Box>
         </Box>
         <Box m={5}>
           <MovieReviewsCarousel/>
         </Box>
+        <MovieReviewForm/>
       </DialogContent>
     </Dialog>
   );

@@ -1,0 +1,26 @@
+
+/* CSS */
+.review-button {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter,sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0px 10px; 
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border: none;
+}
+
+.review-button:hover {
+  background-color: #f0f0f0;
+  box-shadow: none;
+}
