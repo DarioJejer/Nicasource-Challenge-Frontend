@@ -12,9 +12,9 @@ export const Home = () => {
   useEffect(() => {
     try {
         axios.get("http://localhost:8000/movie/").then(res => res.data)
-            .then(movies => {
-                setMovies(movies);
-            })
+          .then(movies => {
+            setMovies(movies);
+          })
     } catch (error) {
         console.log(error);
     }
@@ -24,7 +24,11 @@ export const Home = () => {
     <>
       <NavBar/>
       <div className="movies-grid">
-        {movies.map(movie => <MovieCard/>)}
+        {movies.map(movie => {
+
+          return (
+          <MovieCard key={movie.Id} movie={movie} />)
+        })}
       </div>
     </>
   );

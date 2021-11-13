@@ -7,8 +7,9 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { MovieModal } from "./MovieModal";
 
-export const MovieCard = () => {
+export const MovieCard = ({movie}) => {
   
+  const {Title, Plot, Poster} = movie
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -19,16 +20,15 @@ export const MovieCard = () => {
         <CardMedia
           component="img"
           height="300"
-          image="https://www.gamespot.com/a/uploads/original/1562/15626911/3776884-image%285%29.png"
+          image={Poster}
           alt="Movie Poster"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Title
+            {Title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            {Plot}
           </Typography>
         </CardContent>
       </CardActionArea>

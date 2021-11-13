@@ -13,7 +13,7 @@ export const MovieModal = ({open, handleClose}) => {
       aria-labelledby="movie-title"
       aria-describedby="movie-plot"
       scroll="body"
-      fullWidth= "true"
+      fullWidth={open}
       maxWidth= "lg"
     >
       <DialogContent>
