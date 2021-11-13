@@ -9,6 +9,7 @@ function App() {
     //       <Route path="/" render={()=>{<Home/>}} />
     //   </Routes>
     // </Router>
+    // <Landing/>
     <Home/>
   );
 }
