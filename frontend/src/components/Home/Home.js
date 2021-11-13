@@ -7,7 +7,8 @@ import { NavBar } from "./NavBar";
 export const Home = () => {
   return (
     <>
-      <NavBar/>
+      <Landing/>
+      {/* <NavBar/>
       <div className="movies-grid">
         <MovieCard/>
         <MovieCard/>
@@ -17,7 +18,7 @@ export const Home = () => {
         <MovieCard/>
         <MovieCard/>
         <MovieCard/>
-      </div>
+      </div> */}
     </>
   );
 };
