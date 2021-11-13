@@ -12,7 +12,10 @@ export const MovieCard = ({movie}) => {
   const {Title, Plot, Poster} = movie
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    window.location.href = "http://localhost:3000/";                    
+    setOpen(false);
+  } 
 
   return (
     <Card sx={{ maxWidth: 300, margin: 2}}>

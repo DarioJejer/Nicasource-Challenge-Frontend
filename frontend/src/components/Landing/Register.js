@@ -1,17 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Grid,Paper, Avatar, TextField, Button } from '@material-ui/core'
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 
 export const Register = () => {
+    const [UserName, setUserName] = useState("");
+    const [Password, setPassword] = useState("");
     const [errors, setErrors] = React.useState({});
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
+    const handleUserNameChange = (e) => {
+        setUserName(e.target.value);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        var newErrors = {
-            ["Username"]: true,
-            ["Password"]: true
+        try {
+            axios.post("http://localhost:8000/user/", {UserName, Password})
+              .then((response) => {
+                  localStorage.setItem(
+                      "user",
+                      JSON.stringify({UserName, Password})
+                  );
+              });            
+        } catch (error) {
+            var newErrors = {
+                ["Username"]: true,
+                ["Password"]: true
+            }
+            setErrors({...errors, ...newErrors});                
         }
-        setErrors({...errors, ...newErrors});    
     }
 
     const paperStyle={padding :20,width:280, margin:"0px auto"}
@@ -24,8 +44,8 @@ export const Register = () => {
                 <h2>Register</h2>
             </Grid>
             <form onSubmit={handleSubmit}>
-                <TextField error={errors.Username} label='Username' placeholder='Enter username' fullWidth required/>
-                <TextField error={errors.Password} label='Password' placeholder='Enter password' type='password' fullWidth required/>
+                <TextField error={errors.Username} name="Username" value={UserName} onChange={handleUserNameChange} label='Username' placeholder='Enter username' fullWidth required/>
+                <TextField error={errors.Password} name="Password" value={Password} onChange={handlePasswordChange} label='Password' placeholder='Enter password' type='password' fullWidth required/>
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Register</Button>            
             </form>
         </Paper>
