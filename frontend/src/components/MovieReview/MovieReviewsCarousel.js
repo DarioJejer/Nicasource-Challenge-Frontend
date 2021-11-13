@@ -3,9 +3,9 @@ import Carousel from 'react-material-ui-carousel'
 import { Grid } from '@mui/material'
 import { MovieReview } from './MovieReview';
 
-export const MovieReviewsCarousel = () => {     
+export const MovieReviewsCarousel = ({reviews}) => {     
     
-    const groupReviews = (reviews) => {
+    const groupReviews = () => {
         const groupZise = Math.ceil(window.innerWidth * 0.6 / 450);
         const groupedReviews = [];
         reviews.forEach((review, i) => {
@@ -16,7 +16,7 @@ export const MovieReviewsCarousel = () => {
         return groupedReviews;
     }
 
-    const renderGroup = (reviews, i) => {
+    const renderGroup = (reviewsgroup, i) => {
         return (
             <React.Fragment key={i}>
                 <Grid
@@ -26,15 +26,14 @@ export const MovieReviewsCarousel = () => {
                 alignItems="center"
                 gap= "40px"
                 >
-                    {reviews.map(review => <MovieReview key={review.toString()}/>)}
+                    {reviewsgroup.map(review => <MovieReview key={review.Id} review={review}/>)}
                 </Grid>
             </React.Fragment>
         )
         
     }
 
-    const reviews = [1,2,3,4,5,6,7,8,9,10];
-    var groupedReviews = groupReviews(reviews);
+    var groupedReviews = groupReviews();
 
     return (
         <Carousel>

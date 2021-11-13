@@ -32,7 +32,7 @@ export const MovieCard = ({movie}) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <MovieModal open={open} handleClose={handleClose}/>
+      <MovieModal open={open} handleClose={handleClose} movie={movie}/>
     </Card>
   );
 };

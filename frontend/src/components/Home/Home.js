@@ -7,7 +7,6 @@ import { MovieCard } from "../Movie/MovieCard"
 export const Home = () => {
 
   const [movies, setMovies] = useState([])
-  const [reviews, setReviews] = useState([])
 
   useEffect(() => {
     try {
@@ -25,7 +24,6 @@ export const Home = () => {
       <NavBar/>
       <div className="movies-grid">
         {movies.map(movie => {
-
           return (
           <MovieCard key={movie.Id} movie={movie} />)
         })}

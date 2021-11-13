@@ -5,21 +5,19 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 
-export const MovieReview = () => {
+export const MovieReview = ({review}) => {
   
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardHeader                
-        title="Name of author"
-        subheader="September 14, 2016"
+        title={"Name of author"}
+        subheader="{review.Date.toDateString()}"
       />      
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Dapibus ultrices in iaculis nunc sed. 
-          Morbi tempus iaculis urna id volutpat. Quis commodo odio aenean sed adipiscing diam donec. Mollis aliquam ut porttitor leo a.
-          Nulla pharetra diam sit amet. Habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat.
+          {review.Comment}
         </Typography>       
-        <Rating name="read-only" value={2} readOnly sx={{margin: 2}}/>
+        <Rating name="read-only" value={review.Rating} readOnly sx={{margin: 2}}/>
       </CardContent>      
     </Card>
   );
