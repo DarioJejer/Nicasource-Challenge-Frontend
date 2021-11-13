@@ -20,10 +20,9 @@ export const Login = () => {
     const btnstyle={margin:'25px 0'}
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         var newErrors = {
-            ["Username"]: true,
-            ["Password"]: true
+            Username: true,
+            Password: true
         }
         try {
             axios.get(`http://localhost:8000/user/?username=${UserName}&password=${Password}`)

@@ -64,6 +64,11 @@ export const NavBar = () => {
     setAnchorEl(null);
   };
 
+  const handleLogOut = () => {
+    localStorage.removeItem("user");
+    window.location.href = "http://localhost:3000/";                    
+  }
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -82,7 +87,7 @@ export const NavBar = () => {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleLogOut}>Log Out</MenuItem>
     </Menu>
   );
 

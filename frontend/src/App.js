@@ -5,7 +5,7 @@ import { Landing } from './components/Landing/Landing';
 
 function App() {
 
-  const userToken = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     // <Router>
@@ -14,7 +14,7 @@ function App() {
     //   </Routes>
     // </Router>
     <>
-      {userToken ? ( 
+      {user ? ( 
         <Home/>
       ) : (
         <Landing/>

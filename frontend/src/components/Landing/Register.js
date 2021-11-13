@@ -16,7 +16,6 @@ export const Register = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         try {
             axios.post("http://localhost:8000/user/", {UserName, Password})
               .then((response) => {
@@ -27,8 +26,8 @@ export const Register = () => {
               });            
         } catch (error) {
             var newErrors = {
-                ["Username"]: true,
-                ["Password"]: true
+                Username: true,
+                Password: true
             }
             setErrors({...errors, ...newErrors});                
         }
